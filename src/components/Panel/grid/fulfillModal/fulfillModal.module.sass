@@ -1,0 +1,141 @@
+@import '../../../../styles/variables.module'
+
+#fulfill_modal
+  background-color: $lightGrayBackground
+  .offcanvas_header
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-direction: row-reverse
+    button
+      margin-right: 4px
+      font-size: 12px
+    .offcanvas_title
+      font-size: 18px
+  .offcanvas_body
+    padding: 0 16px
+    font-size: 14px
+    font-weight: $light
+    .fulfill_body_module
+      padding: 16px
+      margin: 16px 0 0
+      background-color: $white
+      border-radius: 10px
+      .large
+        font-weight: $bold
+        font-size: 16px
+      .semibold
+        font-weight: $bold
+      .limit_width
+        width: 80%
+        overflow: auto
+        &.lg
+          width: 80%
+        &.align_right
+          text-align: right
+      .fulfill_body_mainTitle
+        font-size: 18px
+        font-weight: $bold
+      .secondary
+        color: $gray
+      .fulfill_product_list
+        list-style: none
+        margin: 0
+        padding: 0.5rem 0 0
+      .fulfill_product_item,
+      .fulfill_product_cost,
+      .with_btn,
+      .fulfill_product_delivery
+        padding: 0 0 0.5rem
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .btn_link
+          font-size: 15px
+          &:hover,
+          &:focus,
+          &:focus-visible,
+          &:active
+            background: none
+            color: $gray
+            border: none
+            outline: none
+      .fulfill_product_cost
+        padding: 0.5rem 0 0
+      hr
+        margin: 0.3rem 0
+      .form_receipt_wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        div
+          width: 22%
+        p
+          margin: 0
+      &.submit_btn
+        padding: 0
+        margin-bottom: 1rem
+        background-color: none
+        div
+          button
+            width: 100% 
+            padding: 8px 16px
+            font-size: 14px
+            font-weight: $medium
+      .receipt_info_module
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.input_wrapper_special
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .remove_arrow
+    &[type=number]
+      &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+  .remove_arrow
+    &[type=number]
+      &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+  .remove_arrow
+    &[type=number]
+      -moz-appearance: textfield
+  .form_label
+    position: static
+    color: $black
+    font-size: 14px
+    margin: 0
+    padding: 0
+  .form_control,
+  .form_select
+    font-size: 14px
+    padding: 0 !important
+    width: 50%
+    text-align: right
+    border: none
+    border-bottom: 1px solid $black
+    border-radius: 0
+    color: $black
+    font-weight: $light
+    text-overflow: ellipsis
+    &.is_invalid_special
+      padding-right: 1.5rem !important
+    &:disabled
+      background-color: transparent
+      border: none
+      border-bottom: 1px solid transparent
+      color: $black
+  .form_select
+    cursor: pointer
+    padding-right: 1.3rem !important
+    background-position: right 0 center !important
+  .is_invalid_special
+    color: $invalidMarker !important
+    border: none !important
+    background-image: url('/assets/images/icons/alertRed.svg') !important
+    background-repeat: no-repeat
+    background-position: right

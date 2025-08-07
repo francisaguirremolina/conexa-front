@@ -1,0 +1,302 @@
+@import '../../styles/variables.module'
+
+.remove_arrow
+  &[type=number]
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+.remove_arrow
+  &[type=number]
+    &::-webkit-outer-spin-button
+      -webkit-appearance: none
+      margin: 0
+
+.remove_arrow
+  &[type=number]
+    -moz-appearance: textfield
+
+.input_wrapper,
+.select_wrapper
+  position: relative
+
+.parent_box_input
+  position: relative
+  .child_icon
+    position: absolute
+    right: 5%
+    top: 8%
+    color: $purple
+
+.form_check
+  margin: 0
+  margin-right: 29px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+
+.form_switch
+  display: grid
+  grid-template-columns: auto 1fr
+  align-items: center
+  input
+    margin: 0
+  label
+    margin-left: 4px
+
+.form_control,
+.form_select
+  border-radius: 6px
+  height: 40px
+  border: 1px solid $grayLine
+  font-size: 1rem
+  padding: 0.5rem 2rem 0.5rem 0.7rem
+  &:focus
+    border: 1px solid $grayLine
+    &::placeholder
+      opacity: 1
+  &::placeholder
+    opacity: 0
+  &:disabled
+    background-color: $lightGrayBackground
+    color: $gray
+
+.form_select
+  cursor: pointer
+  option
+    &.form_select_option_disabled
+      color: red
+    &:hover
+      background-color: $purpleBackground !important
+      cursor: pointer
+
+.form_select_option
+  cursor: pointer !important
+
+.form_label
+  display: flex
+  margin-bottom: 0
+  align-items: center
+  font-size: 0.875rem
+  font-weight: $light
+  position: absolute
+  top: 15%
+  left: 12px
+  transition: all 0.2s ease-in-out
+  color: $black
+  background-color: white
+  padding: 9px auto 7px 15px
+  cursor: auto
+  height: 65%
+  &.moveUp
+    // top: -15%
+    top: -7.5%
+    line-height: 1
+    font-size: 0.625rem
+    height: fit-content
+  &.label_disabled
+    &.moveUp
+      background-color: transparent
+  &.moveDown
+    top: 18%
+    font-size: 0.875rem
+    width: 83%
+  &.label_bold
+    font-weight: $bold
+  &.select_label
+    &.moveUp
+      top: -15%
+      font-size: 0.625rem
+      height: fit-content
+    &.moveDown
+      top: 16%
+      // font-size: 0.875rem
+      width: 83%
+  &.label_disabled
+    background-color: $lightGrayBackground
+    width: fit-content
+.remitter
+  height: auto
+
+.form_check_label
+  font-size: 14px
+  &.label_bold
+    font-weight: $bold
+
+.form_check_input
+  border-color: $purple
+  cursor: pointer
+  margin-right: 12px
+  display: flex
+  justify-content: center
+  align-items: center
+  &:checked
+    background-color: $purple
+    border-color: $purple
+
+.radioBtn_wrapper
+  margin-bottom: 8px
+  input
+    opacity: 0
+    position: fixed
+    width: 0
+    &:checked + label
+      border: 2.5px solid $purple
+      background-color: $purpleLightBackground
+    &:disabled + label
+      color: $grayLine
+  label
+    cursor: pointer
+    background-color: transparent
+    border: 2.5px solid $grayLine
+    border-radius: 6px
+    transition: background-color 0.3s ease-in-out
+    width: 100%
+    width: 145px
+    height: 48px
+    &.disabled
+      label
+        background-color: $grayLine
+        cursor: auto
+  &.rounded
+    label
+      border-radius: 100%
+      width: 70px
+      height: 70px
+      padding: 1rem
+      line-height: 40px
+      text-align: center
+  &.illustrated
+    label
+      margin-right: 24px
+      border-radius: 15px
+      width: 380px
+      height: fit-content
+      height: 111px
+      padding: 0
+      text-align: center
+  &.illustrated_boxes
+    label
+      margin-right: 24px
+      border-radius: 15px
+      width: 101px
+      height: 101px
+      padding: 6px 18px 12px
+      text-align: center
+  @media screen and ( max-width: 1280px )
+    label
+    &.illustrated
+      label
+        width: 355px
+  @media screen and ( max-width: 1024px )
+    label
+    &.illustrated
+      label
+        width: 296px
+
+.textarea
+  resize: none
+
+.is_valid
+  background-image: none !important
+  border: 1px solid $validMarker !important
+
+.is_invalid
+  background-image: none !important
+  border: 1px solid $invalidMarker !important
+
+.invalid_msg
+  display: inline-block
+  color: $invalidMarker
+  font-size: 12px
+  padding: 0
+  margin: 5px 0
+  line-height: 16px
+
+.reverse
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-direction: row-reverse
+  margin: 0
+  padding: 0
+
+@media screen and ( max-width: 1367px )
+  .form_control,
+  .form_select
+    font-size: 1rem
+
+  .form_label
+    font-size: 0.8rem
+    &.moveDown
+      top: 25%
+      font-size: 0.8rem
+    &.moveUp
+      // top: -15%
+      top: -7.5% // added
+
+@media screen and ( max-width: 1280px )
+  .parent_box_input
+    .child_icon
+      top: 6%
+
+    .form_control,
+    .form_select
+      font-size: 0.8rem
+      padding: 0.5rem
+
+    .form_label
+      font-size: 0.8rem
+
+    .form-check-label
+      font-size: 0.85rem
+
+@media screen and ( max-width: 1183px )
+  .form_control,
+  .form_select
+    font-size: 0.8rem
+
+  .form_label
+    font-size: 0.8rem
+    &.moveUp
+      font-size: 0.5rem
+      top: -5% // added
+    &.moveDown
+      font-size: 0.8rem
+
+  .form-check-label
+    font-size: 0.8rem
+
+@media screen and ( max-width: 1024px )
+  .parent_box_input
+    .child_icon
+      top: 4%
+
+  .form_control,
+  .form_select
+    font-size: 0.7rem
+
+  .form_label
+    font-size: 0.7rem
+    &.moveUp
+      // top: -20%
+      top: -7.5% // added
+      font-size: 0.5rem
+    &.moveDown
+      top: 20%
+      font-size: 0.8rem
+
+  .form-check-label
+    font-size: 0.7rem
+
+@media screen and ( max-width: 768px )
+  .form_control,
+  .form_select
+    font-size: 0.5rem
+
+  .form_label
+    font-size: 0.5rem
+    &.moveDown
+      font-size: 0.6rem
+
+  .form-check-label
+    font-size: 0.65rem

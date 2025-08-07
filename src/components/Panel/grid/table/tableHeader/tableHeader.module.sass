@@ -1,0 +1,28 @@
+@import '../../../../../styles/variables.module'
+
+.table_header
+  list-style: none
+  padding: 1% 2%
+  background-color: $purpleLightBackground
+  border-radius: 6px
+  font-size: 12px
+  display: grid
+  width: 100%
+  overflow: auto
+  grid-template-columns:  0.3fr repeat(6, 1fr)
+  li
+    display: flex
+    justify-content: flex-start
+    align-items: center
+  #select_all_orders
+    border-radius: 100%
+  .header_status
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    button
+      border: none
+      background: none
+.columns-tn 
+  grid-template-columns: 0.3fr repeat(5, 1fr)
+  

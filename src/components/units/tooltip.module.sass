@@ -1,0 +1,27 @@
+@import '../../styles/variables.module'
+
+#tooltip_top
+  opacity: 1
+  font-family: $main-font
+  font-weight: $light
+  font-size: 10px
+  div
+    &:first-child
+      &::before
+        border-left: 6px solid transparent
+        border-right: 6px solid transparent
+        border-top: 6px solid $purple
+    &:last-child
+      background-color: $purple
+    
+.info_icon
+  fill: $purple
+
+.hidden_btn
+  border: none
+  background: none
+  width: fit-content
+  height: fit-content
+  padding: 0
+  margin: 0
+  margin-left: 8px

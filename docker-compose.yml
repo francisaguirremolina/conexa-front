@@ -1,0 +1,14 @@
+version: '3.9'
+
+networks:
+  nextjs:
+    driver: overlay
+  
+services:
+  app:
+    image: IMAGE_URI
+    working_dir: /app
+    networks:
+      - nextjs
+    ports:
+      - "9002:3000"

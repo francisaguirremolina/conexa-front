@@ -1,0 +1,38 @@
+@import '../../../../styles/variables.module'
+
+
+#authPage
+  padding: 64px 0 0 0
+  width: 100%
+  height: 100vh
+  background-image: url(/assets/images/corner-top.svg), url(/assets/images/corner-bottom.svg)
+  background-position: left top, right bottom
+  background-repeat: no-repeat, no-repeat
+  background-size: 300px 300px
+  position: relative
+  .text_wrapper
+    width: 35%
+    margin-top: 40px
+    margin-bottom: 41px
+    .section_subtitle
+      font-size: 14px
+      font-weight: $light
+      margin: 0
+    .bold
+      font-weight: $bold
+  @media screen and ( max-width: 1536px )
+    padding: 32px 0 0 0
+  @media screen and ( max-width: 1440px )
+    padding: 32px 0 0 0
+    background-size: 270px 270px
+    .text_wrapper
+      width: 40%
+  @media screen and ( max-width: 1367px )
+    .text_wrapper
+      margin-top: 20px
+  @media screen and ( max-width: 1024px )
+    background-size: 250px 250px
+    .text_wrapper
+      width: 50%
+
+

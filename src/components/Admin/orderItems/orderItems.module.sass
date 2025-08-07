@@ -1,0 +1,26 @@
+@import '../../../styles/variables.module'
+
+.orderItem_wrapper
+  border-radius: 6px
+  border: 1px solid $grayLine
+  padding: 16px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 8px
+  .text_error_order
+    color: $invalidMarker
+    margin-bottom: 0
+    font-size: .75rem
+  .text_icon_wrapper
+    padding-left: 18px
+    span
+      font-size: 14px
+      margin-left: 1rem
+    svg
+      &.successful
+        color: $validMarker
+      &.danger
+        color: $invalidMarker
+    .outlined
+      background-color: red !important

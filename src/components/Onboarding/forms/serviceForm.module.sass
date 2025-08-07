@@ -1,0 +1,58 @@
+@import '../../../styles/variables.module'
+
+#form_wrapper
+  height: 90%
+  margin-top: 32px
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  .labels_triple_wrapper,
+  .inputs_triple_wrapper
+    display: grid
+    grid-template-columns: repeat(3, 1fr 0.5fr)
+    align-items: flex-start
+    gap: 0px
+    width: 60%
+    span
+      display: flex
+      justify-content: center
+      align-items: center
+  .labels_triple_wrapper
+    grid-template-columns: repeat(3, 1fr)
+    p
+      margin: 0
+  h4
+    font-size: 14px
+    line-height: 24px
+    font-weight: $medium
+    margin-top: 32px
+  @media screen and ( max-width: 1440px )
+    .labels_triple_wrapper,
+    .inputs_triple_wrapper
+      width: 70%
+  @media screen and ( max-width: 1280px )
+    .labels_triple_wrapper,
+    .inputs_triple_wrapper
+      width: 80%
+  @media screen and ( max-width: 1024px )
+    .labels_triple_wrapper,
+    .inputs_triple_wrapper
+      width: 90%
+
+.btn_illustrated_box
+  font-size: 10px
+  line-height: 24px
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+  p
+    margin: 0
+
+.input_guide_parent
+  position: relative
+  .input_guide_child
+    position: absolute
+    right: 16px
+    top: 8px
+    color: $black

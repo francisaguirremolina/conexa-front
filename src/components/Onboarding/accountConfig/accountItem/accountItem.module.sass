@@ -1,0 +1,18 @@
+@import '../../../../styles/variables.module'
+
+.accountItem_grid
+  width: 100%
+  padding: 0.5rem 2rem
+  text-align: left
+  background-color: $neutralBackground
+  border: none
+  border-radius: 5px
+  display: grid
+  grid-template-columns: 1fr 2fr
+  justify-content: center
+  align-items: center
+  min-height: 65px
+  div:nth-child(2)
+    justify-self: center
+  div:nth-child(3)
+    justify-self: end

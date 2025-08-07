@@ -1,0 +1,71 @@
+@import '../../../../styles/variables.module'
+
+#reference_modal
+  .modal_header,
+  .modal_body
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    margin: 0 auto
+    padding: 30px 42px 0
+    .reference_title
+      margin: 0
+      font-size: 18px
+      font-weight: $bold
+      padding: 0
+    .btn_close
+      color: $purple !important
+    .status_list
+      margin: 0
+      margin-top: 0
+      padding: 0
+      padding-bottom: 36px
+      list-style: none
+      background: none
+      font-weight: $medium
+      .status_item
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        margin-bottom: 20px
+        z-index: 1
+        position: relative
+        &::before
+          content: ""
+          position: absolute
+          z-index: 0
+          top: 10px
+          left: 5px
+          height: 55px
+          width: 1px
+          border: none
+          border-left: 2px dashed $grayLine
+        &:nth-child(6)
+          border-bottom: 1px solid $grayLine
+          padding-bottom: 20px
+          &::before
+            display: none
+        &:nth-child(7),
+        &:nth-child(8),
+        &:last-child
+          margin-bottom: 16px
+          &::before
+            display: none
+        &:last-child
+          margin-bottom: 0
+        .img_wrapper
+          padding: 0
+        .status_text_wrapper
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          justify-content: center
+          font-size: 14px
+          padding-left: 0.5rem
+          color: $black
+          .secondary
+            color: $gray
+            font-weight: $light
+          p
+            margin: 0

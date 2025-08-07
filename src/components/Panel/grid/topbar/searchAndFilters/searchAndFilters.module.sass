@@ -1,0 +1,173 @@
+@import '../../../../../styles/variables.module'
+.search_and_filter_container
+  display: flex
+  justify-content: flex-start
+  width: 465px
+  height: 36px
+  border-radius: 6px
+  position: relative
+  .search_wrapper
+    display: flex
+    justify-content: flex-start
+    align-content: center
+    border-radius: 5px
+    border: 1px solid $grayLine
+    padding: 0.5% 1.5% 0.55%
+    width: 350px
+    svg
+      height: 100%
+      margin-right: 0.5rem
+    button
+      background: none
+      border: none
+      align-self: center
+      justify-self: center
+      width: 10%
+      height: 100%
+      padding: 0 0 0.2rem 0
+      margin-left: 0.5rem
+      color: $purple
+    #search_input
+      padding-left: 1.5%
+      padding-bottom: 5px
+      width: 85%
+      border: none
+      background: transparent
+      color: $black
+      &::placeholder
+        color: $grayLine
+        font-weight: $light
+        font-size: 12px
+      &:focus
+        outline: none !important
+  .filter_wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid $purple
+    border-radius: 6px
+    margin: 0 16px
+    width: 110px
+    transition: background-color 0.3s ease-in-out
+    cursor: pointer
+    &:hover
+      background-color: $purpleLightBackground
+    .filter_dropdown_btn
+      border: none
+      background: none
+      color: $purple
+      font-size: 14px
+      padding: 8px
+    .filters_counter
+      font-size: 8px
+      color: $white
+      background-color: $purple
+      width: 12px
+      height: 12px
+      border-radius: 100%
+      text-align: center
+  #filter_dropdown_container
+    position: absolute
+    width: 328px
+    top: 45px
+    right: -100px
+    padding: 24px 24px 30px
+    box-shadow: 0px 11px 15px -7px rgba(152, 167, 204, 0.2), 0px 24px 38px 3px rgba(152, 167, 204, 0.14), 0px 9px 46px 8px rgba(152, 167, 204, 0.12)
+    border-radius: 6px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    background-color: $white
+    z-index: 91
+    .dropdown_top
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+    img
+      margin-right: 1.5%
+    .filter_dropdown_close
+      border: none
+      background: none
+      color: $black
+    .date_select
+      position: relative
+      width: 100%
+      margin-bottom: 24px
+      position: relative
+      input
+        width: 100%
+        border: 1px solid $black
+        padding: 0.5rem
+        border-radius: 5px
+        cursor: pointer
+        font-size: 0.875rem
+        color: $black
+        &:focus-visible
+          outline: none !important
+      &::after
+        content: ''
+        display: inline-block
+        position: absolute
+        top: 11px
+        right: 19px
+        width: 9.5px
+        height: 9.5px
+        transform: rotate(45deg)
+        border-right: 2px solid #000
+        border-bottom: 2px solid #000
+        pointer-events: none
+      ul
+        position: absolute
+        z-index: 99
+        width: 100%
+        border: 1px solid $black
+        border-radius: 5px
+        background-color: white
+        list-style: none
+        padding: 0
+        margin: 8px 0 0 0
+        overflow-y: auto
+        overflow-x: hidden
+        max-height: 150px
+        color: $black
+        li
+          width: 100%
+          color: $black
+          button
+            padding: 0.7rem
+            font-size: 0.875rem
+            text-align: left
+            width: 100%
+            border: none
+            background: none
+            transition: all 0.2s linear
+            color: $black
+            &:hover
+              background-color: $purple
+              color: $white
+              font-weight: $bold
+    .filter_btn_wrapper
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      div
+        &:first-child
+          button
+            font-size: 14px
+    .date_parent
+      position: relative
+      cursor: pointer
+      .date_child
+        position: absolute
+        z-index: 99
+        border: none
+        border-radius: 6px
+        background-color: $white
+        box-shadow: 0px 11px 15px -7px rgba(152, 167, 204, 0.2), 0px 24px 38px 3px rgba(152, 167, 204, 0.14), 0px 9px 46px 8px rgba(152, 167, 204, 0.12)
+        padding: 16px
+        font-family: $main-font
+        font-weight: $light
+        font-size: 14px

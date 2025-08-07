@@ -1,0 +1,26 @@
+#adminPage
+  padding: 64px 0 0 0
+  width: 100%
+  height: 100vh
+  background-image: url(/assets/images/corner-top.svg), url(/assets/images/corner-bottom.svg)
+  background-position: left top, right bottom
+  background-repeat: no-repeat, no-repeat
+  background-size: 300px 300px
+  position: relative
+  .loader_wrapper
+    height: 70vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .text_wrapper
+      width: 100%
+      margin-top: 0
+      margin-bottom: 140px
+  @media screen and ( max-width: 1536px )
+    padding: 32px 0 0 0
+  @media screen and ( max-width: 1440px )
+    padding: 32px 0 0 0
+    background-size: 270px 270px
+  @media screen and ( max-width: 1024px )
+    background-size: 250px 250px

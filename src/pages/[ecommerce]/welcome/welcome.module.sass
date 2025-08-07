@@ -1,0 +1,34 @@
+@import '../../../styles/variables.module'
+
+#welcomePage
+  padding: 108px 0 0 0
+  width: 100%
+  height: 100vh
+  background-image: url(/assets/images/corner-top.svg), url(/assets/images/corner-bottom.svg)
+  background-position: left top, right bottom
+  background-repeat: no-repeat, no-repeat
+  .intro,
+  .intro_form
+    max-width: 698px
+    text-align: center
+    font-weight: 300
+    font-size: 20px
+    margin-top: 5rem
+    margin-bottom: 56px
+    .bold
+      font-weight: 700
+  button
+    margin-bottom: 1rem
+  @media screen and ( max-width: 1440px )
+    background-size: 270px 270px
+  @media screen and ( max-width: 1367px )
+    .intro
+      font-size: 18px
+      margin-top: 102px
+      margin-bottom: 86px
+    button
+      margin-bottom: 1.5rem
+  @media screen and ( max-width: 1024px )
+    background-size: 250px 250px
+    .intro
+      font-size: 16px

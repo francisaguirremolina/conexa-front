@@ -1,0 +1,54 @@
+@import '../../styles/variables.module'
+
+#notificationAlert
+  position: absolute
+  top: 2.5%
+  right: 4%
+  width: 70%
+  border-radius: 5px
+  padding: 12px 16px
+  z-index: 1050
+  &.external_layout
+    display: flex
+    justify-content: space-between
+    align-items: center
+  svg
+    &.success
+      color: $validText
+    &.error
+      color: $invalidText
+  &.success
+    background-color: $validBackground
+  &.error
+    background-color: $invalidBackground
+  &.warning
+    background-color: $warningBackground
+  .internal_layout
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    span
+      display: inline-block
+      margin: 0 0 0 16px
+      padding: 0
+      font-size: 16px
+      font-weight: $medium
+      &.success
+        color: $validText
+      &.error
+        color: $invalidText
+      &.warning
+        color: $warningText
+  .icon_wrapper
+    svg
+      &.successful
+        color: $validMarker
+      &.danger
+        color: $invalidMarker
+  button
+    border: none
+    background: none
+    margin: 0
+    padding: 0
+.textSpace
+    white-space: break-spaces

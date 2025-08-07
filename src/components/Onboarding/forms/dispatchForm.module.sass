@@ -1,0 +1,84 @@
+@import '../../../styles/variables.module'
+
+#form_wrapper
+  height: 90%
+  margin-top: 32px
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  .form_container
+    overflow-y: auto
+    overflow-x: hidden
+    padding-right: 0.2rem
+    height: 90%
+    padding: 1rem 0
+  .select_wrapper
+    display: grid
+    grid-template-columns: auto 0.3fr
+    align-items: center
+  .inputs_wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 32px 159px
+  h4
+    font-size: 14px
+    line-height: 24px
+    font-weight: $medium
+    margin-top: 22px
+  @media screen and ( max-width: 1367px )
+    margin-top: 22px
+    .inputs_wrapper
+      gap: 22px 139px
+    h4
+      line-height: 14px
+  @media screen and ( max-width: 1280px )
+    .inputs_wrapper
+      gap: 32px 109px
+  @media screen and ( max-width: 1024px )
+    .inputs_wrapper
+      gap: 22px 69px
+
+.btn_illustrated
+  display: flex
+  flex-direction: column
+  .btn_illustrated_wrapper
+    display: grid
+    grid-template-columns: 35px 1fr
+    align-items: start
+    text-align: left
+    padding: 16px 18px 8px
+    position: relative
+    object-fit: "contain"
+  .btn_illustrated_text
+    width: 90%
+    margin-left: 10px
+    h5
+      margin: 0
+      font-size: 16px
+      line-height: 24px
+      font-weight: $medium
+    p
+      margin: 0
+      font-size: 10px
+      line-height: 14px
+      font-weight: $light
+  .extra_info
+    background-color: $purple
+    color: $white
+    height: 100%
+    font-size: 8px
+    line-height: 10.18px
+    border-radius: 0 0 13px 13px
+    padding: 8px
+    display: flex
+    justify-content: center
+    align-items: center
+  @media screen and ( max-width: 1280px )
+    .extra_info
+      padding: 0 2px
+
+.radio_text
+  p
+    margin: 0
+    &.light
+      font-weight: $light

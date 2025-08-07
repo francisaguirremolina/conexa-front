@@ -1,0 +1,122 @@
+@import '../../styles/variables.module'
+
+.btn_primary
+  font-size: 1rem
+  font-weight: $medium
+  padding: 16px 24px
+  line-height: 15.31px
+  background-color: $purple
+  border: 1px solid $purple
+  border-radius: 8px
+  width: fit-content
+  transition: background-color 0.3s ease-in-out
+  &:disabled
+    opacity: 1
+    background-color: $purple-disabled
+    border: 1px solid $purple-disabled
+  &:hover
+    background-color: $purple-hovered
+    border: 1px solid $purple-hovered
+  &:active
+    background-color: $purple-active !important
+    border: 1px solid $purple-active !important
+  &:focus
+    background-color: $purple-active
+  &:focus-visible
+    background-color: $purple-active
+  &.inside_grid
+    padding: 10px 16px
+    border-radius: 5px
+    margin-right: 16px
+    font-size: 12px
+  &.outlined
+    background-color: $white
+    color: $purple
+    &:hover
+      background-color: $purpleLightBackground
+  &.small_padding
+    padding: 8px 34px
+  @media screen and ( max-width: 1367px )
+    font-size: 0.875rem
+    padding: 0.7rem 2rem
+  @media screen and ( max-width: 1025px )
+    font-size: 0.75rem
+    padding: 0.7rem 1.5rem
+  @media screen and ( max-width: 768px )
+    font-size: 0.6rem
+    padding: 1rem 1rem
+
+.btn_link
+  border: none
+  background: none !important
+  border: none !important
+  border-radius: 0
+  color: $purple !important
+  text-decoration: none
+  padding: 0
+  font-weight: $bold
+  font-size: 1rem
+  transition: color 0.3s ease-in-out
+  a
+    color: $purple !important
+    &:hover
+      color: $purple-hovered !important
+    &:active
+      color: $purple-active !important
+    &:focus
+      color: $purple-active !important
+  &:hover
+    color: $purple-hovered !important
+  &:active
+    color: $purple-active !important
+    background-color: transparent !important
+    border: none !important
+  &:focus
+    color: $purple-active !important
+  &.underlined
+    text-decoration: underline
+  &.disabled
+    color: $gray !important
+  @media screen and ( max-width: 1367px )
+    font-size: 0.875rem
+
+.btn_upload_wrapper
+  position: relative
+  .btn_upload
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    z-index: -1
+  label
+    font-size: 1rem
+    font-weight: 500
+    color: $purple
+    background-color: $white
+    border: 1.5px solid $purple
+    border-radius: 5px
+    display: inline-block
+    cursor: pointer
+    padding: 12px 24px
+    &:hover
+      background-color: $purpleBackground
+      border: 1.5px solid $purple
+    &:focus
+      outline: 1px dotted #000
+  span
+    &.upload_info
+      position: absolute
+      top: 0.5rem
+      rigth: 0
+      font-size: 11px !important
+  @media screen and ( max-width: 1367px )
+    label
+      padding: 6px 12px
+      font-size: 0.875rem
+
+.fullWidth_percent
+  width: 100%
+
+.common_btn_disabled
+  color: $black !important

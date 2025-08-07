@@ -1,0 +1,90 @@
+@import '../../../styles/variables.module'
+.main_nav
+  z-index: 1
+  padding: 88px 14px 0 
+  margin: 0
+  background-color: $purple
+  height: 100%
+  width: 25%
+  transition: width 0.5s ease
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  position: absolute
+  &.condensed
+    width: 5.5%
+    .panel_navMenu
+      width: auto
+      a
+        padding: 0.6rem 0.8rem
+  @media screen and ( max-width: 1440px )
+    &.condensed
+      width: 7%
+  @media screen and ( max-width: 1366px )
+    padding: 3.5rem 14px 0
+  @media screen and ( max-width: 1280px )
+    padding: 3.5rem 14px 0 
+    &.condensed
+      width: 7.5%
+  @media screen and ( max-width: 1024px )
+    padding: 3rem 14px 0 
+    &.condensed
+      width: 9.5%
+  .panel_navMenu
+    margin-top: 73px
+    padding: 0.5rem
+    background-color: transparent
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 100%
+    div
+      width: 100%
+      padding: 0
+      margin: 0
+    a
+      width: 100%
+      text-decoration: none
+      border-radius: 6px
+      color: $white
+      padding: 0.6rem 0.8rem
+      margin: 6px 0
+      font-size: 0.875rem
+      font-weight: $medium
+      display: grid
+      grid-template-columns: 30px auto
+      align-items: center
+      &:hover
+        background-color: $purple-hovered
+        color: $white
+        border-radius: 6px
+      &.condensed
+        display: flex
+        justify-content: center
+        align-items: center
+      &.active
+        background-color: $purple-hovered
+        color: $white
+        font-weight: $bold
+        border-radius: 6px
+  @media screen and ( max-width: 1366px )
+    .panel_navMenu
+      margin-top: 3rem
+  @media screen and ( max-width: 1280px )
+    .panel_navMenu
+      margin-top: 2rem
+  @media screen and ( max-width: 1024px )
+    .panel_navMenu
+      margin-top: 1.5rem
+      a
+        padding: 0.6rem 0.5rem
+        font-size: 0.75rem
+  @media screen and ( max-width: 768px )
+    .panel_navMenu
+      margin-top: 1.5rem
+      padding: 0.2rem
+      a
+          font-size: 0.7rem
+          padding: 0.6rem 0.4rem

@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "oca-frontend",
+      "script": "npm run start-prod-standalone",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "time": true,
+      "env": {
+        "HOSTNAME": "0.0.0.0"
+      }
+    }
+  ]
+}

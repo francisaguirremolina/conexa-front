@@ -1,0 +1,36 @@
+@import '../../../styles/variables.module'
+
+#ordersPage
+  width: 100%
+  height: 100vh
+  .content_wrapper
+    padding: 100px 145px
+    height: 100%
+    .form_wrapper
+      height: 90%
+      margin-top: 32px
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      .inputs_wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 32px 159px
+  @media screen and ( max-width: 1367px )
+    .content_wrapper
+      padding: 72px 108px
+      .form_wrapper
+        .inputs_wrapper
+          gap: 32px 139px
+  @media screen and ( max-width: 1280px )
+    .content_wrapper
+      padding: 82px 108px
+      .form_wrapper
+        .inputs_wrapper
+          gap: 32px 109px
+  @media screen and ( max-width: 1024px )
+    .content_wrapper
+      padding: 52px 68px
+      .form_wrapper
+        .inputs_wrapper
+          gap: 22px 69px

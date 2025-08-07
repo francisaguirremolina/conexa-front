@@ -1,0 +1,79 @@
+@import '../../../../../styles/variables.module'
+
+.table_row
+  list-style: none
+  width: 100%
+  height: 85px
+  display: grid
+  grid-template-columns: 0.3fr repeat(6, 1fr)
+  align-items: center
+  row-gap: 50px
+  border: 1px solid $grayLine
+  border-radius: 6px
+  font-size: 14px
+  &.row_checked
+    background-color: $lightGrayBackground
+  .black_semibold
+    font-weight: $medium
+  .secondary
+    color: $gray
+    font-weight: $light
+  p
+    width: 100%
+    margin: 0
+  .cell_origin
+    font-size: 12px
+  .gridRow_btn_dropdown
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 80%
+    padding: 0
+    &.selected
+      background-color: $purpleLightBackground
+      border-radius: 12px
+    &.dropdownDisabled
+      cursor: text
+    p
+      text-align: left
+      padding-left: 0.5rem
+    div
+      width: 90%
+  .cell_package,
+  .cell_destination
+    position: relative
+  .cell_status
+    display: flex
+    justify-content: flex-start
+    align-items: center
+  button
+    border: none
+    background: none
+  .cell_button
+    button
+      font-size: 14px
+      font-weight: $medium
+  .cell_actions
+    display: flex
+    justify-content: space-between
+    align-items: center
+    line-height: 0
+    a,
+    button
+      border: none
+      background: none
+      cursor: pointer
+      padding: 0
+      svg
+        color: $purple
+        transition: color 0.3s ease-in-out
+        &:hover
+          color: $black
+    .actions_wrapper
+      position: relative
+  .centered_actions
+    justify-content: space-evenly 
+
+.columns_tn
+  grid-template-columns: 0.3fr repeat(5, 1fr)

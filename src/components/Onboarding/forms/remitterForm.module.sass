@@ -1,0 +1,29 @@
+#form_wrapper
+  height: 90%
+  margin-top: 32px
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  .inputs_wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 1rem 7rem
+    &.second_group
+      margin-top: 32px
+    .inputs_triple
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 16px
+    .inputs_double
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 16px
+  @media screen and ( max-width: 1367px )
+    .inputs_wrapper
+      gap: .75rem 4rem
+  @media screen and ( max-width: 1280px )
+    .inputs_wrapper
+      gap: 1rem 4rem
+  @media screen and ( max-width: 1024px )
+    .inputs_wrapper
+      gap: .5rem 2rem

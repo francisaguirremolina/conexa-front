@@ -1,0 +1,29 @@
+#form_wrapper
+  height: 90%
+  margin-top: 32px
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+  &.inside_panel
+    height: auto
+  &.inside_panel_second
+    height: 50%
+  .inputs_wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 32px 159px
+  @media screen and ( max-width: 1367px )
+    &.inside_panel_second
+      height: 45%
+    .inputs_wrapper
+      gap: 32px 139px
+  @media screen and ( max-width: 1280px )
+    &.inside_panel_second
+      height: 40%
+    .inputs_wrapper
+      gap: 32px 109px
+  @media screen and ( max-width: 1024px )
+    &.inside_panel_second
+      height: 38%
+    .inputs_wrapper
+      gap: 22px 69px
