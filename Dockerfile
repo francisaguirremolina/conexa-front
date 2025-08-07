@@ -6,9 +6,6 @@ WORKDIR /app
 
 COPY . .
 
-ARG SECRET_FILE
-COPY $SECRET_FILE ./.env
-
 RUN npm run install-all
 
 RUN npm run build
