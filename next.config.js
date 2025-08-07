@@ -15,14 +15,4 @@ module.exports = withBundleAnalyzer({
   // So, the source code is "basePath-ready".
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
-  env: {
-    API_URL: process.env.API_URL,
-    API_URL_TIENDANUBE: process.env.API_URL_TIENDANUBE,
-    API_URL_VTEX: process.env.API_URL_VTEX,
-    API_URL_WOOCOMMERCE: process.env.API_URL_WOOCOMMERCE,
-    API_URL_PRESTASHOP: process.env.API_URL_PRESTASHOP,
-    ECOMMERCE: process.env.ECOMMERCE,
-    CRYPTOJS_SECRET_KEY: process.env.CRYPTOJS_SECRET_KEY,
-    HOSTNAME: process.env.HOSTNAME,
-  },
 });
