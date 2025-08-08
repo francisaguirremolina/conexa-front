@@ -104,17 +104,3 @@ If you are VSCode users, you can have a better integration with VSCode by instal
 With the plugins installed on your VSCode, ESLint and Prettier can automatically fix the code and show you the errors. Same goes for testing, you can install VSCode Jest extension to automatically run your tests and it also show the code coverage in context.
 
 Pro tips: if you need a project wide type checking with TypeScript, you can run a build with <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Mac.
-
-### Runtime configuration
-
-The application reads API endpoints from environment variables when the container starts. Pass the URLs when running the image (for example, via a ConfigMap in Kubernetes):
-
-```
-docker run -e NEXT_PUBLIC_API_URL_TIENDANUBE=<url> \
-           -e NEXT_PUBLIC_API_URL_VTEX=<url> \
-           -e NEXT_PUBLIC_API_URL_WOOCOMMERCE=<url> \
-           -e NEXT_PUBLIC_API_URL_PRESTASHOP=<url> \
-           -p 3000:3000 conexa-front
-```
-
-These variables are consumed at runtime, so rebuilding the image is not required when the values change.
