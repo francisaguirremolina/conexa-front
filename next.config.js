@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-// Environment variables are loaded at runtime; `env` is not defined here.
+// Environment variables are provided via build-time args, so we do not set `env` here.
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });

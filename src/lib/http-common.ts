@@ -2,78 +2,68 @@
 import type { AxiosRequestConfig } from 'axios';
 import axios from 'axios';
 import { configure, encryptRequestInterceptor } from 'conexa-core-browser';
-import { Ecommerce, getApiUrl } from './ecommerces';
+import { Ecommerce, ecommerces } from './ecommerces';
 import { extractAndSaveEcommerce } from './extractEcommerce';
 
 import * as httpInterceptors from './http-interceptors';
 
 const mainPath = '/api/v1';
+let ecommerce = extractAndSaveEcommerce();
+const baseUrl = ecommerces[ecommerce as Ecommerce]?.apiUrl || '';
 
-async function createHttpCommon() {
-  const ecommerce = extractAndSaveEcommerce();
-  const baseUrl = await getApiUrl(ecommerce as Ecommerce);
+configure({
+  secretKey: process.env.CRYPTOJS_SECRET_KEY!,
+  debug: true,
+  env: process.env.NODE_ENV,
+  securityBypass: true
+});
 
-  configure({
-    secretKey: process.env['CRYPTOJS_SECRET_KEY']!,
-    debug: true,
-    env: process.env.NODE_ENV,
-    securityBypass: true,
-  });
+const httpCommon = axios.create({
+  baseURL: `${baseUrl}${mainPath}`,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    "ngrok-skip-browser-warning": "69420",
+  },
+});
 
-  const instance = axios.create({
-    baseURL: `${baseUrl}${mainPath}`,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'ngrok-skip-browser-warning': '69420',
-    },
-  });
+// Request interceptor for adding the userId from Cookies, to query param to all requests. And extracting the token from Cookies and adding it to headers.
+httpCommon.interceptors.request.use(httpInterceptors.request);
+httpCommon.interceptors.request.use(encryptRequestInterceptor);
 
-  instance.interceptors.request.use(httpInterceptors.request);
-  instance.interceptors.request.use(encryptRequestInterceptor);
-
-  instance.interceptors.response.use(
-    httpInterceptors.response.onSuccess,
-    httpInterceptors.response.onFailed,
-  );
-
-  return instance;
-}
-
-const httpCommonPromise = createHttpCommon();
+// Interceptor for return data, handle errors and shows notifications
+httpCommon.interceptors.response.use(
+  httpInterceptors.response.onSuccess,
+  httpInterceptors.response.onFailed,
+);
 
 export class HttpService {
   basePath: string;
 
+  http: typeof httpCommon;
+
   constructor(basePath: string) {
     this.basePath = basePath;
+    this.http = httpCommon;
   }
 
-  private async getHttp() {
-    return httpCommonPromise;
-  }
-
-  async get(path: string, config?: AxiosRequestConfig) {
+  get(path: string, config?: AxiosRequestConfig) {
     const url = `${this.basePath}/${path}`;
-    const http = await this.getHttp();
-    return http.get(url, config);
+    return this.http.get(url, config);
   }
 
-  async post(path: string, data?: any, config?: AxiosRequestConfig) {
+  post(path: string, data?: any, config?: AxiosRequestConfig) {
     const url = `${this.basePath}/${path}`;
-    const http = await this.getHttp();
-    return http.post(url, data, config);
+    return this.http.post(url, data, config);
   }
 
-  async put(path: string, data?: any, config?: AxiosRequestConfig) {
+  put(path: string, data?: any, config?: AxiosRequestConfig) {
     const url = `${this.basePath}/${path}`;
-    const http = await this.getHttp();
-    return http.put(url, data, config);
+    return this.http.put(url, data, config);
   }
 
-  async delete(path: string, config?: AxiosRequestConfig) {
+  delete(path: string, config?: AxiosRequestConfig) {
     const url = `${this.basePath}/${path}`;
-    const http = await this.getHttp();
-    return http.delete(url, config);
+    return this.http.delete(url, config);
   }
 }
