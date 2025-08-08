@@ -1,9 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
+// Environment variables are provided via build-time args, so we do not set `env` here.
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer({
+const nextConfig = {
   output: 'standalone',
   eslint: {
     dirs: ['.'],
@@ -15,4 +16,6 @@ module.exports = withBundleAnalyzer({
   // So, the source code is "basePath-ready".
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
-});
+};
+
+module.exports = withBundleAnalyzer(nextConfig);
